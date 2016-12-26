@@ -124,6 +124,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bluebird@^2.10.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
+
 bluebird@^3.4.7:
   version "3.4.7"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.4.7.tgz#f72d760be09b7f76d08ed8fae98b289a8d05fab3"
@@ -580,6 +584,10 @@ is-my-json-valid@^2.12.4:
     jsonpointer "^4.0.0"
     xtend "^4.0.0"
 
+is-numeric@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/is-numeric/-/is-numeric-0.0.5.tgz#5f26778b3385005334344b1b5985ee7ea63316e6"
+
 is-property@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
@@ -675,6 +683,10 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+
 lodash.merge@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
@@ -682,6 +694,10 @@ lodash.merge@^4.6.0:
 lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+
+lodash@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 lodash@^4.17.2:
   version "4.17.2"
@@ -983,6 +999,14 @@ react-tap-event-plugin@^2.0.1:
   dependencies:
     fbjs "^0.8.6"
 
+react-youtube-player@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/react-youtube-player/-/react-youtube-player-0.3.3.tgz#2fe9818623425176a92596bc7edcbdd4d4d55d73"
+  dependencies:
+    is-numeric "^0.0.5"
+    lodash "^3.10.1"
+    youtube-player "^2.0.0"
+
 react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
@@ -1108,6 +1132,10 @@ single-line-log@^1.1.2:
   resolved "https://registry.yarnpkg.com/single-line-log/-/single-line-log-1.1.2.tgz#c2f83f273a3e1a16edb0995661da0ed5ef033364"
   dependencies:
     string-width "^1.0.1"
+
+sister@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/sister/-/sister-3.0.0.tgz#88eb57047cb283da1e070b1a7cae8212f3bcb2db"
 
 sntp@1.x.x:
   version "1.0.9"
@@ -1321,3 +1349,12 @@ yauzl@2.4.1:
 youtube-duration-format@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/youtube-duration-format/-/youtube-duration-format-0.2.0.tgz#5a32d5ad7354bd9bf9c70bd78558ca70328d9fe2"
+
+youtube-player@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/youtube-player/-/youtube-player-2.0.0.tgz#d0d3eab2def5cd18cd3b1ca7645deac97c490c22"
+  dependencies:
+    bluebird "^2.10.0"
+    load-script "^1.0.0"
+    lodash "^3.10.1"
+    sister "^3.0.0"

@@ -1,6 +1,7 @@
 import Router from "./router";
 import * as React from 'react';
-import { Video } from "youtube";
+import inspect from "logspect";
+import { Video, Thumbnails } from "youtube";
 import getLength = require("youtube-duration-format");
 import PlayIcon from "material-ui/svg-icons/av/play-arrow";
 import { Card, CardMedia, CardTitle, CardHeader, Avatar } from "material-ui";
@@ -34,6 +35,10 @@ export default class Thumbnail extends Router<IProps, IState> {
         }
 
         this.setState(state);
+    }
+
+    private getThumbnailSrc(thumbs: Thumbnails) {
+        return !!thumbs.standard ? thumbs.standard.url : !!thumbs.medium ? thumbs.medium.url : thumbs.default.url;
     }
 
     //#endregion
@@ -76,7 +81,7 @@ export default class Thumbnail extends Router<IProps, IState> {
             <div onClick={e => this.navigateToVideo(e)}>
                 <Card className="thumbnail">
                     <CardMedia overlay={<CardTitle subtitle={subtitle} />}>
-                        <img className="img-responsive" alt={`${channelTitle} – ${title}`} src={thumbnails.standard.url} />
+                        <img className="img-responsive" alt={`${channelTitle} – ${title}`} src={this.getThumbnailSrc(thumbnails)} />
                     </CardMedia>
                     <CardHeader avatar={avatar} title={title} subtitle={channelTitle} />
                 </Card>

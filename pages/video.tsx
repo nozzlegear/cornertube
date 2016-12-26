@@ -1,8 +1,15 @@
 import * as React from 'react';
+import inspect from "logspect";
+import Videos from "../stores/videos";
 import Router from "../components/router";
+import * as Player from "react-youtube-player";
+import { CircularProgress } from "material-ui";
+import BackIcon from "material-ui/svg-icons/navigation/arrow-back";
 
 export interface IProps extends React.Props<any> {
-    
+    params: {
+        id: string;
+    }
 }
 
 export interface IState {
@@ -47,9 +54,19 @@ export default class VideoPage extends Router<IProps, IState> {
     }
     
     public render() {
+        const video = Videos.videos.find(v => v.id === this.props.params.id).snippet;
+
         return (
             <section id="video">
-                <h3>{"Video page"}</h3>
+                <div className="auto-resizable-iframe">
+                    <Player videoId={this.props.params.id} configuration={{showinfo: 0, iv_load_policy: 1, modestbranding: 1}} />
+                </div>
+                <h3>
+                    <a href="#" onClick={e => this.context.router.goBack()}>
+                        <BackIcon />
+                    </a>
+                    {video.title}
+                </h3>                
             </section>
         );
     }
